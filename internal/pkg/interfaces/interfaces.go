@@ -5,6 +5,15 @@ import (
 	"math"
 )
 
+// BEST PRACTICES
+// LOWEST MINUM METHODS
+// NO METHOD LIKE ISTHISINTERFACEACAR USE TYPE ASSERTIONS
+// Interfaces are not classes, they are slimmer.
+// Interfaces don’t have constructors or deconstructors that require that data is created or destroyed.
+// Interfaces aren’t hierarchical by nature, though there is syntactic sugar to create interfaces that happen to be supersets of other interfaces.
+// Interfaces define function signatures, but not underlying behavior. Making an interface often won’t DRY up your code in regards to struct methods. For example, if five types satisfy the fmt.Stringer interface, they all need their own version of the String() function.
+// https://blog.boot.dev/golang/golang-interfaces/
+
 // Interface are inherit implicitally, you dont need to explicit tell the compiler to implement an interface (like java)
 
 // This is the interface
@@ -52,6 +61,8 @@ func ExecuteInterfaces() {
 	copier.Copy("test.txt", "awsText.txt")
 	typeAssertion(recangle)
 	typeAssertion(circle)
+	typeAssertionSwitches(recangle)
+	typeAssertionSwitches(circle)
 }
 
 func printAreaAndPerimeterOfTheShapes(s shape) {
@@ -119,5 +130,15 @@ func typeAssertion(s shape) {
 		// This print 0 because its the default value of the radius
 		fmt.Printf("\nThe shape is not a circle but the area is %v", c.calculateArea())
 	}
-	
+
+}
+
+func typeAssertionSwitches(s shape) {
+	switch implement := s.(type) {
+	case rectangle:
+		fmt.Printf("\nThis is a retangle and this is its width: %v", implement.width)
+	case circle:
+		fmt.Printf("\nThis is a circle and this is its radius: %v", implement.radius)
+	}
+
 }
