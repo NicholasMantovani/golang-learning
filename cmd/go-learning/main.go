@@ -6,6 +6,7 @@ import (
 	"github.com/NicholasMantovani/go-learning/internal/pkg/errors"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/functions"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/interfaces"
+	"github.com/NicholasMantovani/go-learning/internal/pkg/loops"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/structs"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/variables"
 )
@@ -21,4 +22,6 @@ func main() {
 	interfaces.ExecuteInterfaces()
 	fmt.Println("\n---------------ERRORS-----------")
 	errors.ExecuteErrors()
+	fmt.Println("\n---------------LOOPS-----------")
+	loops.ExecuteLoops()
 }

@@ -1,6 +1,7 @@
 package errors
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
 )
@@ -31,7 +32,6 @@ func executeFunctionWithErrorHandled(value string) {
 	fmt.Println("Converted: ", val)
 }
 
-
 func functionWithPossibileError(value string) (int, error) {
 	return strconv.Atoi(value)
 }
@@ -43,4 +43,23 @@ func functionWithPossibileErrorHandled(value string) int {
 		return 0
 	}
 	return converted
+}
+
+// CUSTOM ERROR
+type customError struct {
+	name string
+}
+
+func (c customError) Error() string {
+	return fmt.Sprintf("%v has generated an error", c.name)
+}
+
+func throwError(userName string) error {
+	return customError{name: userName}
+}
+
+// ERRORS PACKAGE
+func throwErrorFromPackage() error {
+	var err error = errors.New("Something went wrong")
+	return err
 }
