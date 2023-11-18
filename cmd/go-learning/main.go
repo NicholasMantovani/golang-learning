@@ -7,6 +7,7 @@ import (
 	"github.com/NicholasMantovani/go-learning/internal/pkg/functions"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/interfaces"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/loops"
+	"github.com/NicholasMantovani/go-learning/internal/pkg/sliceslearning"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/structs"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/variables"
 )
@@ -24,4 +25,6 @@ func main() {
 	errors.ExecuteErrors()
 	fmt.Println("\n---------------LOOPS-----------")
 	loops.ExecuteLoops()
+	fmt.Println("\n---------------SLICES-----------")
+	sliceslearning.ExecuteSlices()
 }
