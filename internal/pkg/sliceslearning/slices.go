@@ -1,6 +1,9 @@
 package sliceslearning
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func ExecuteSlices() {
 	declareArrays()
@@ -18,6 +21,10 @@ func ExecuteSlices() {
 	fmt.Println("\nThis is a variadic function and it will sum 1,2,3 result: ", variadicSum(1, 2, 3))
 	fmt.Printf("I will call a variadic function with the spread operator values: %v | result: %v", allTwoArray, variadicSum(allTwoArray...))
 	appendSlices()
+	executingCostByDay()
+	slicesOfSlices()
+	createMatrix(2, 2)
+	iterateWithRange()
 }
 
 func declareArrays() {
@@ -107,4 +114,112 @@ func appendSlices() {
 	secondSlice = append(secondSlice, firstSlice...)
 	fmt.Println("Second slice after the first slice append", secondSlice)
 
+}
+
+// BOOT.DEV PROBLEM
+// FROM THIS:
+//
+//	[]cost{
+//	    {0, 4.0},
+//	    {1, 2.1},
+//	    {1, 3.1},
+//	    {5, 2.5},
+//	}
+//
+// TO THIS:
+//
+//	[]float64{
+//	    4.0,
+//	    5.2,
+//	    0.0,
+//	    0.0,
+//	    0.0,
+//	    2.5,
+//	}
+type cost struct {
+	day   int
+	value float64
+}
+
+func getCostByDay(costs []cost) []float64 {
+	costByDay := []float64{}
+	for i := 0; i < len(costs); i++ {
+		cost := costs[i]
+
+		for cost.day >= len(costByDay) {
+			// we must grow the array with some default value
+			costByDay = append(costByDay, 0.0)
+		}
+
+		costByDay[cost.day] += cost.value
+	}
+	return costByDay
+}
+
+func executingCostByDay() {
+
+	initialSlice := []cost{
+		{day: 0, value: 4.0},
+		{1, 2.1},
+		{1, 3.1},
+		{5, 2.5},
+	}
+
+	expectedSlice := []float64{
+		4.0,
+		5.2,
+		0.0,
+		0.0,
+		0.0,
+		2.5,
+	}
+	resultSlice := getCostByDay(initialSlice)
+	fmt.Println("This is the inital array", initialSlice)
+	fmt.Println("This is the expected array", expectedSlice)
+	fmt.Println("This is the result of the function", resultSlice)
+
+	if reflect.DeepEqual(expectedSlice, resultSlice) {
+		fmt.Println("CORRECT!!!")
+	}
+}
+
+func slicesOfSlices() {
+	matrix := make([][]int, 0)
+	fmt.Println("Created matrix", matrix)
+	row := []int{1, 2, 3, 4, 5}
+	fmt.Println("Created row", row)
+	matrix = append(matrix, [][]int{row}...)
+	row = []int{6, 7, 8, 9, 10}
+	fmt.Println("Created second row", row)
+	matrix = append(matrix, [][]int{row}...)
+	fmt.Println("Matrix", matrix)
+}
+
+func createMatrix(rows, cols int) {
+	matrix := make([][]int, 0)
+
+	fmt.Printf("\nCreating matrix of %vx%v", rows, cols)
+
+	for i := 0; i <= rows; i++ {
+		row := make([]int, 0)
+		for j := 0; j <= cols; j++ {
+			row = append(row, i*j)
+		}
+		matrix = append(matrix, row)
+	}
+	fmt.Println("\nCreated matrix", matrix)
+}
+
+func iterateWithRange() {
+	friends := []string{"Me", "Sium", "Fortnite"}
+
+	fmt.Println("Iterating with forEach")
+
+	for i, friend := range friends {
+		fmt.Println(i, friend)
+	}
+
+	for _, friend := range friends {
+		fmt.Println(friend)
+	}
 }
