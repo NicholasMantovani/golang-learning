@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 
+	advancedfunctions "github.com/NicholasMantovani/go-learning/internal/pkg/advancedFunctions"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/errors"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/functions"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/interfaces"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/loops"
-	mapslearning "github.com/NicholasMantovani/go-learning/internal/pkg/mapsLearning"
+	"github.com/NicholasMantovani/go-learning/internal/pkg/mapsLearning"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/sliceslearning"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/structs"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/variables"
@@ -30,4 +31,6 @@ func main() {
 	sliceslearning.ExecuteSlices()
 	fmt.Println("\n---------------MAPS-------------")
 	mapslearning.ExecuteMaps()
+	fmt.Println("\n---------------ADVANCED_FUNCTIONS------")
+	advancedfunctions.ExecuteAdvancedFunction()
 }
