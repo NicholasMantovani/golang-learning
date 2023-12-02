@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	advancedfunctions "github.com/NicholasMantovani/go-learning/internal/pkg/advancedFunctions"
+	cesarcipher "github.com/NicholasMantovani/go-learning/internal/pkg/cesarCipher"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/errors"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/functions"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/interfaces"
@@ -33,4 +34,10 @@ func main() {
 	mapslearning.ExecuteMaps()
 	fmt.Println("\n---------------ADVANCED_FUNCTIONS------")
 	advancedfunctions.ExecuteAdvancedFunction()
+
+
+
+
+	fmt.Println("\n---------------Test---------------")
+	cesarcipher.ExecuteCesarCipher()
 }
