@@ -6,10 +6,10 @@ import (
 )
 
 
-var letters []string = []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "z"}
+var letters []string = []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
 
 func ExecuteCesarCipher() {
-	result := doCipher("test", 5)
+	result := doCipher("test", 10)
 
 	fmt.Println("The encrypted input is ", result)
 }

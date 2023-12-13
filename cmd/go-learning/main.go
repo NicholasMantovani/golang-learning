@@ -10,6 +10,7 @@ import (
 	"github.com/NicholasMantovani/go-learning/internal/pkg/interfaces"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/loops"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/mapsLearning"
+	"github.com/NicholasMantovani/go-learning/internal/pkg/pointers"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/sliceslearning"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/structs"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/variables"
@@ -34,10 +35,8 @@ func main() {
 	mapslearning.ExecuteMaps()
 	fmt.Println("\n---------------ADVANCED_FUNCTIONS------")
 	advancedfunctions.ExecuteAdvancedFunction()
-
-
-
-
-	fmt.Println("\n---------------Test---------------")
+	fmt.Println("\n---------------CesarCipher---------------")
 	cesarcipher.ExecuteCesarCipher()
+	fmt.Println("\n---------------POINTERS---------------")
+	pointers.ExecutePointers()
 }

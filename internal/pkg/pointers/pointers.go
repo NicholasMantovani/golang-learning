@@ -1,0 +1,6 @@
+package pointers
+
+func ExecutePointers() {
+
+	
+}
