@@ -5,11 +5,12 @@ import (
 
 	advancedfunctions "github.com/NicholasMantovani/go-learning/internal/pkg/advancedFunctions"
 	cesarcipher "github.com/NicholasMantovani/go-learning/internal/pkg/cesarCipher"
+	"github.com/NicholasMantovani/go-learning/internal/pkg/concurrency"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/errors"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/functions"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/interfaces"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/loops"
-	"github.com/NicholasMantovani/go-learning/internal/pkg/mapsLearning"
+	mapslearning "github.com/NicholasMantovani/go-learning/internal/pkg/mapsLearning"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/pointers"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/sliceslearning"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/structs"
@@ -39,4 +40,6 @@ func main() {
 	cesarcipher.ExecuteCesarCipher()
 	fmt.Println("\n---------------POINTERS---------------")
 	pointers.ExecutePointers()
+	fmt.Println("\n---------------CONCURRENCY---------------")
+	concurrency.ExecuteConcurrency()
 }
