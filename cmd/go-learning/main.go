@@ -8,6 +8,7 @@ import (
 	contextlearning "github.com/NicholasMantovani/go-learning/internal/pkg/context"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/errors"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/functions"
+	"github.com/NicholasMantovani/go-learning/internal/pkg/generics"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/interfaces"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/loops"
 	mapslearning "github.com/NicholasMantovani/go-learning/internal/pkg/mapsLearning"
@@ -45,6 +46,8 @@ func main() {
 	// concurrency.ExecuteConcurrency()
 	fmt.Println("\n---------------MUTEX---------------")
 	mutex.ExecuteMutext()
+	fmt.Println("\n---------------GENERICS---------------")
+	generics.ExecuteGenerics()
 	fmt.Println("\n---------------CONTEXT---------------")
 	contextlearning.ExecuteContext()
 }
