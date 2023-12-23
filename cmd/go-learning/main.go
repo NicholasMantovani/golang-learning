@@ -5,6 +5,7 @@ import (
 
 	advancedfunctions "github.com/NicholasMantovani/go-learning/internal/pkg/advancedFunctions"
 	cesarcipher "github.com/NicholasMantovani/go-learning/internal/pkg/cesarCipher"
+	"github.com/NicholasMantovani/go-learning/internal/pkg/concurrency"
 	contextlearning "github.com/NicholasMantovani/go-learning/internal/pkg/context"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/errors"
 	"github.com/NicholasMantovani/go-learning/internal/pkg/functions"
@@ -43,7 +44,7 @@ func main() {
 	fmt.Println("\n---------------POINTERS---------------")
 	pointers.ExecutePointers()
 	fmt.Println("\n---------------CONCURRENCY---------------")
-	// concurrency.ExecuteConcurrency()
+	concurrency.ExecuteConcurrency()
 	fmt.Println("\n---------------MUTEX---------------")
 	mutex.ExecuteMutext()
 	fmt.Println("\n---------------GENERICS---------------")
